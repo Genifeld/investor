@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Genifeld — Investor Brief</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0F2A3E;
+    --navy-deep: #0A1D2C;
+    --parchment: #F6F3EC;
+    --parchment-dim: #EDE8DC;
+    --teal: #1F7A6C;
+    --teal-deep: #124F45;
+    --amber: #C98A3E;
+    --ink: #14232C;
+    --ink-soft: #46565F;
+    --ink-faint: #7C8A92;
+    --rule: rgba(20, 35, 44, 0.14);
+    --bg: var(--parchment);
+    --bg-panel: var(--parchment-dim);
+    --text: var(--ink);
+    --text-soft: var(--ink-soft);
+    --text-faint: var(--ink-faint);
+    --rule-color: var(--rule);
+    --accent: var(--teal);
+    --accent-deep: var(--teal-deep);
+    --hero-bg: var(--navy);
+    --hero-bg-deep: var(--navy-deep);
+    --hero-text: #F3EFE4;
+    --hero-text-soft: #AFC2C9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #10181D;
+      --bg-panel: #162127;
+      --text: #EDE8DC;
+      --text-soft: #B7C2C6;
+      --text-faint: #7E8C91;
+      --rule-color: rgba(237, 232, 220, 0.14);
+      --accent: #4FBBA4;
+      --accent-deep: #7ED4C0;
+      --hero-bg: #0A1219;
+      --hero-bg-deep: #060B10;
+      --hero-text: #F3EFE4;
+      --hero-text-soft: #93A9AF;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #10181D;
+    --bg-panel: #162127;
+    --text: #EDE8DC;
+    --text-soft: #B7C2C6;
+    --text-faint: #7E8C91;
+    --rule-color: rgba(237, 232, 220, 0.14);
+    --accent: #4FBBA4;
+    --accent-deep: #7ED4C0;
+    --hero-bg: #0A1219;
+    --hero-bg-deep: #060B10;
+    --hero-text: #F3EFE4;
+    --hero-text-soft: #93A9AF;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 28px; }
+  a { color: var(--accent-deep); }
+
+  header.top {
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 26px 28px; max-width: 760px; margin: 0 auto;
+  }
+  .wordmark { font-family: 'Source Serif 4', serif; font-size: 19px; font-weight: 600; letter-spacing: 0.2px; }
+  .wordmark span { color: var(--accent-deep); }
+  .top-tag { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--text-faint); }
+
+  .hero {
+    background: linear-gradient(180deg, var(--hero-bg) 0%, var(--hero-bg-deep) 100%);
+    color: var(--hero-text);
+    padding: 64px 28px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero .wrap { position: relative; z-index: 1; max-width: 760px; }
+  .hero svg.trace { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.5; }
+  .hero .kicker {
+    font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: 0.03em;
+    color: var(--hero-text-soft); margin: 0 0 18px;
+  }
+  .hero h1 {
+    font-family: 'Source Serif 4', serif; font-weight: 500;
+    font-size: clamp(30px, 4.6vw, 42px); line-height: 1.18; margin: 0 0 20px; max-width: 15ch;
+  }
+  .hero p.lede {
+    font-size: 17px; color: var(--hero-text-soft); max-width: 52ch; margin: 0 0 34px;
+  }
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+    border-top: 1px solid rgba(243,239,228,0.18); padding-top: 24px;
+  }
+  .hero-stats div { }
+  .hero-stats .num {
+    font-family: 'Source Serif 4', serif; font-size: 22px; color: var(--hero-text);
+  }
+  .hero-stats .lbl {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--hero-text-soft);
+    margin-top: 4px; line-height: 1.4;
+  }
+
+  main { padding: 8px 0 40px; }
+  section { padding: 44px 0; border-bottom: 1px solid var(--rule-color); }
+  section:last-of-type { border-bottom: none; }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--accent-deep);
+    margin: 0 0 10px;
+  }
+  h2 {
+    font-family: 'Source Serif 4', serif; font-weight: 500; font-size: 25px;
+    margin: 0 0 18px; color: var(--text);
+  }
+  h3 {
+    font-family: 'Source Serif 4', serif; font-weight: 500; font-size: 17px;
+    margin: 26px 0 8px; color: var(--text);
+  }
+  p { color: var(--text-soft); margin: 0 0 14px; max-width: 68ch; }
+  p.lead { color: var(--text); font-size: 17px; }
+  ul.plain { list-style: none; margin: 0; padding: 0; }
+  ul.plain li {
+    padding: 12px 0; border-top: 1px solid var(--rule-color);
+    display: flex; gap: 18px; align-items: baseline;
+  }
+  ul.plain li:first-child { border-top: none; }
+  ul.plain b { font-weight: 500; color: var(--text); min-width: 150px; flex-shrink: 0; }
+  ul.plain span { color: var(--text-soft); }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1px 1fr; gap: 26px; align-items: start; }
+  .two-col .rule { background: var(--rule-color); align-self: stretch; }
+  .two-col h4 {
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.02em;
+    text-transform: none; color: var(--accent-deep); margin: 0 0 10px;
+  }
+
+  table.moat { width: 100%; border-collapse: collapse; font-size: 14.5px; margin-top: 8px; }
+  table.moat th, table.moat td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--rule-color); }
+  table.moat th { font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-size: 11.5px; color: var(--text-faint); }
+  table.moat td.me { color: var(--accent-deep); font-weight: 500; }
+  table.moat td.dim { color: var(--text-faint); }
+
+  .rev-row { display: flex; gap: 22px; padding: 16px 0; border-top: 1px solid var(--rule-color); }
+  .rev-row:first-child { border-top: none; }
+  .rev-row .name { font-family: 'Source Serif 4', serif; font-size: 16.5px; min-width: 170px; flex-shrink: 0; }
+  .rev-row p { margin: 0; }
+
+  .advantage-item { padding: 14px 0; border-top: 1px solid var(--rule-color); }
+  .advantage-item:first-child { border-top: none; }
+  .advantage-item .name { font-weight: 500; color: var(--text); }
+
+  .team-block { display: flex; gap: 18px; align-items: flex-start; margin-bottom: 22px; }
+  .team-initial {
+    width: 46px; height: 46px; border-radius: 50%; background: var(--bg-panel);
+    border: 1px solid var(--rule-color); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Source Serif 4', serif; font-size: 17px; color: var(--accent-deep);
+  }
+  .team-name { font-weight: 500; color: var(--text); }
+  .team-role { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--text-faint); margin-bottom: 6px; }
+
+  .ask-phase { padding: 18px 0; border-top: 1px solid var(--rule-color); }
+  .ask-phase:first-child { border-top: none; }
+  .ask-phase .phase-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--accent-deep); margin-bottom: 6px;
+  }
+  .ask-phase h4 { font-family: 'Source Serif 4', serif; font-weight: 500; font-size: 18px; margin: 0 0 8px; }
+
+  .bar { display: flex; height: 28px; border-radius: 3px; overflow: hidden; margin: 18px 0 12px; }
+  .bar div { height: 100%; }
+  .bar .b1 { background: var(--accent); }
+  .bar .b2 { background: var(--amber); }
+  .bar .b3 { background: var(--text-faint); }
+  .bar-legend { display: flex; flex-wrap: wrap; gap: 18px; font-size: 13px; color: var(--text-soft); }
+  .bar-legend span.sw { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+
+  .risk-item { padding: 16px 0; border-top: 1px solid var(--rule-color); }
+  .risk-item:first-child { border-top: none; }
+  .risk-item .r-name { font-weight: 500; color: var(--text); margin-bottom: 4px; }
+  .risk-item .r-mit { font-size: 14.5px; color: var(--text-soft); }
+  .risk-item .r-mit b { color: var(--accent-deep); font-weight: 500; }
+
+  footer {
+    padding: 40px 28px 48px; text-align: left;
+  }
+  footer .wrap {
+    border-top: 1px solid var(--rule-color); padding-top: 28px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+  }
+  footer .f-name { font-family: 'Source Serif 4', serif; font-size: 16px; }
+  footer .f-meta { font-size: 13.5px; color: var(--text-faint); line-height: 1.7; }
+  footer a { text-decoration: none; border-bottom: 1px solid var(--rule-color); }
+
+  @media (max-width: 620px) {
+    .two-col { grid-template-columns: 1fr; }
+    .two-col .rule { display: none; }
+    .hero-stats { grid-template-columns: 1fr; gap: 16px; }
+    ul.plain li { flex-direction: column; gap: 4px; }
+    ul.plain b { min-width: 0; }
+    .rev-row { flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wordmark">Geni<span>feld</span></div>
+  <div class="top-tag">Investor brief · Munich</div>
+</header>
+
+<div class="hero">
+  <svg class="trace" viewBox="0 0 760 320" preserveAspectRatio="none" aria-hidden="true">
+    <polyline points="0,60 60,60 90,20 120,100 150,60 760,60" fill="none" stroke="#4FBBA4" stroke-width="1" opacity="0.35"/>
+    <polyline points="0,140 200,140 230,180 260,110 290,140 760,140" fill="none" stroke="#C98A3E" stroke-width="1" opacity="0.3"/>
+    <polyline points="0,230 340,230 365,260 395,200 420,230 760,230" fill="none" stroke="#4FBBA4" stroke-width="1" opacity="0.22"/>
+  </svg>
+  <div class="wrap">
+    <p class="kicker">Pharmacogenomics · AI · DiGA-ready</p>
+    <h1>The AI pharmacogenomics platform built to be prescribed and reimbursed in Germany.</h1>
+    <p class="lede">Genifeld matches a patient's genetic profile to drug selection and dosing — architected from day one for German and EU regulatory compliance.</p>
+    <div class="hero-stats">
+      <div><div class="num">€53B</div><div class="lbl">Global personalized genomics market by 2034</div></div>
+      <div><div class="num">~€244</div><div class="lbl">Average DiGA reimbursement per prescription, 2025</div></div>
+      <div><div class="num">Aug 2026</div><div class="lbl">EU AI Act high-risk classification takes effect</div></div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section id="why-now">
+    <p class="eyebrow">Why now</p>
+    <h2>Three trends converge in a 12&ndash;18 month window</h2>
+    <p class="lead">Sequencing cost has collapsed to the point where genomic data now outpaces clinics' ability to interpret it. Germany's DiGA pathway reimburses digital health tools directly through statutory insurance &mdash; 73M lives, 170K prescribing physicians, ~&euro;171M paid across ~700K prescriptions in 2025. And the EU AI Act's high-risk classification for clinical AI takes effect August 2026, raising the compliance bar in a way that rewards early, compliant-by-design entrants over late arrivals.</p>
+  </section>
+
+  <section id="problem-solution">
+    <p class="eyebrow">The problem &amp; solution</p>
+    <h2>Genomic data is outrunning the clinic's ability to read it</h2>
+    <div class="two-col">
+      <div>
+        <h4>Problem</h4>
+        <p>Genomic data is growing exponentially, but clinics and healthcare providers lack secure, fast, user-friendly tools to turn it into actionable, personalized treatment decisions.</p>
+      </div>
+      <div class="rule"></div>
+      <div>
+        <h4>Solution</h4>
+        <p>Genifeld is a secure, AI-driven cloud platform that transforms complex sequencing data into precise clinical insights &mdash; starting with pharmacogenomics, the clinical use case with the fastest path to routine physician adoption and the clearest DiGA reimbursement fit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="market">
+    <p class="eyebrow">Market opportunity</p>
+    <h2>A government-validated distribution path</h2>
+    <ul class="plain">
+      <li><b>TAM</b><span>Global personalized genomics: ~US$15B (2026) &rarr; ~US$53B by 2034 (17.7% CAGR).</span></li>
+      <li><b>SAM</b><span>AI-analytics layer of genomics, the segment Genifeld competes in: ~US$2B (2026) &rarr; ~US$14B by 2035.</span></li>
+      <li><b>SOM</b><span>Germany's DiGA-eligible reimbursement channel &mdash; proven per-prescription revenue, largely inaccessible without a Germany-first regulatory strategy.</span></li>
+    </ul>
+  </section>
+
+  <section id="moat">
+    <p class="eyebrow">Competitive moat</p>
+    <h2>The edge isn't &ldquo;better AI&rdquo;</h2>
+    <p>SOPHiA GENETICS, Tempus, Genoox and PathAI are lab- and hospital-enterprise-facing, US/CH-headquartered, and largely oncology-focused. None are structured around German reimbursement, and none compete head-on in pharmacogenomics. Matching Genifeld requires a competitor to run a comparable 12+ month BfArM process from scratch, in a clinical niche the large players have largely ignored.</p>
+    <table class="moat">
+      <tr><th>&nbsp;</th><th>Genifeld</th><th>Incumbents</th></tr>
+      <tr><td>Germany-first regulatory design</td><td class="me">Yes</td><td class="dim">No</td></tr>
+      <tr><td>Pharmacogenomics focus</td><td class="me">Yes</td><td class="dim">Oncology-led</td></tr>
+      <tr><td>DiGA reimbursement fit</td><td class="me">Yes</td><td class="dim">Not structured for it</td></tr>
+    </table>
+  </section>
+
+  <section id="business-model">
+    <p class="eyebrow">Business model</p>
+    <h2>Three revenue lines</h2>
+    <div class="rev-row"><div class="name">SaaS</div><p>Monthly and annual subscriptions for clinicians and clinics.</p></div>
+    <div class="rev-row"><div class="name">B2B partnerships</div><p>Healthcare providers and genetic testing labs, advanced data processing infrastructure.</p></div>
+    <div class="rev-row"><div class="name">DiGA reimbursement</div><p>Per-prescription statutory insurance payment, at a proven market price point of ~&euro;244/prescription (2025 German average).</p></div>
+  </section>
+
+  <section id="munich">
+    <p class="eyebrow">Munich / Germany advantage</p>
+    <h2>Building inside Germany's biotech capital</h2>
+    <div class="advantage-item"><div class="name">TUM Venture Lab Healthcare</div><p>Dedicated digital health / medtech / life-science track, backed by a &euro;500K SMART HEALTH grant and the new BioLabs | TUM biotech hub opening 2026.</p></div>
+    <div class="advantage-item"><div class="name">BioM / Munich-Martinsried cluster</div><p>~460 biopharma companies, ~48,700 jobs &mdash; one of Germany's two leading biotech regions, with &euro;94M recently secured for a dedicated personalised-medicine cluster.</p></div>
+    <div class="advantage-item"><div class="name">Bayern Kapital</div><p>Regional co-investment for Bavaria-based ventures.</p></div>
+  </section>
+
+  <section id="team">
+    <p class="eyebrow">Team</p>
+    <h2>Product depth, paired with clinical genomics advisory</h2>
+    <div class="team-block">
+      <div class="team-initial">ZK</div>
+      <div>
+        <div class="team-name">Ziba Kiani &mdash; Founder, Product &amp; Technology</div>
+        <div class="team-role">Munich</div>
+        <p>15+ years of product management across FinTech, MarTech and banking, with hands-on AI product experience and direct GDPR/PSD2 regulatory compliance delivery &mdash; expertise that maps directly onto Genifeld's cloud-native architecture and EU regulatory requirements.</p>
+      </div>
+    </div>
+    <div class="team-block">
+      <div class="team-initial">AC</div>
+      <div>
+        <div class="team-name">Advisory &amp; Clinical Network</div>
+        <div class="team-role">In build</div>
+        <p>PhD/MD-level clinical and medical genetics advisory partnerships are being established to strengthen clinical validation, scientific backing, and regulatory authority.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ask">
+    <p class="eyebrow">The ask</p>
+    <h2>A two-phase, non-dilutive-first path</h2>
+    <div class="ask-phase">
+      <div class="phase-label">Phase 1 &middot; Months 0&ndash;12</div>
+      <h4>EXIST Gr&uuml;nderstipendium</h4>
+      <p>Non-dilutive federal funding: &euro;1,000&ndash;3,000/month, plus ~&euro;30K for equipment and coaching. Covers subsistence and early MVP development without spending equity or investor capital.</p>
+    </div>
+    <div class="ask-phase">
+      <div class="phase-label">Phase 2 &middot; Pre-seed equity round</div>
+      <h4>&euro;518K for 15 months of runway</h4>
+      <p>Sized to reach DiGA Fast-Track submission, 3 pilot clinics signed, and clinical validation on 200+ patient cases. Includes a 15% buffer for cost fluctuation.</p>
+      <div class="bar">
+        <div class="b1" style="width:32%"></div>
+        <div class="b2" style="width:11%"></div>
+        <div class="b3" style="width:57%"></div>
+      </div>
+      <div class="bar-legend">
+        <span><span class="sw" style="background:var(--accent)"></span>Founder comp &euro;166K</span>
+        <span><span class="sw" style="background:var(--amber)"></span>Clinical advisory &euro;58K</span>
+        <span><span class="sw" style="background:var(--text-faint)"></span>Product &amp; regulatory &euro;294K</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="risk">
+    <p class="eyebrow">Key risk &amp; mitigation</p>
+    <h2>Where this could go wrong</h2>
+    <div class="risk-item">
+      <div class="r-name">Competitive risk</div>
+      <div class="r-mit">Well-funded US/CH incumbents could enter Germany directly. <b>Mitigation:</b> move first on DiGA listing in the pharmacogenomics niche.</div>
+    </div>
+    <div class="risk-item">
+      <div class="r-name">Regulatory risk</div>
+      <div class="r-mit">GDPR, EU AI Act and MDR overlap adds compliance overhead. <b>Mitigation:</b> compliance-by-design from the outset, budgeted into runway.</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-name">Genifeld</div>
+    <div class="f-meta">
+      Munich, Germany<br>
+      <a href="#">your-email@genifeld.com</a> &middot; <a href="#">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
