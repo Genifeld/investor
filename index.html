@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Genifeld — AI Pharmacogenomics & Precision Medicine</title>
-<meta name="description" content="Genifeld matches a patient's genetic profile to drug selection and dosing — architected for German and EU regulatory compliance.">
-<meta name="keywords" content="AI pharmacogenomics, precision medicine, DiGA, genomic data, Munich biotech">
+<title>Genifeld — KI-Pharmakogenomik & Präzisionsmedizin</title>
+<meta name="description" content="Genifeld gleicht das genetische Profil von Patienten mit Arzneimittelauswahl und Dosierung ab — konzipiert für die deutsche und EU-Regulierung.">
+<meta name="keywords" content="KI Pharmakogenomik, Präzisionsmedizin, DiGA, Genomdaten, München Biotech">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -18,7 +18,6 @@
     --parchment-dim: #EDE8DC;
     --teal: #1F7A6C;
     --teal-deep: #124F45;
-    --amber: #C98A3E;
     --ink: #14232C;
     --ink-soft: #46565F;
     --ink-faint: #7C8A92;
@@ -53,138 +52,129 @@
     }
   }
   * { box-sizing: border-box; }
-  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0;
     background: var(--bg);
     color: var(--text);
     font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 16px;
-    line-height: 1.65;
+    font-size: 15px;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 0 28px; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
 
   header.top {
     display: flex; align-items: baseline; justify-content: space-between;
-    padding: 26px 28px; max-width: 760px; margin: 0 auto;
+    padding: 20px 24px; max-width: 720px; margin: 0 auto;
   }
-  .wordmark { font-family: 'Source Serif 4', serif; font-size: 19px; font-weight: 600; letter-spacing: 0.2px; }
+  .wordmark { font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 600; }
   .wordmark span { color: var(--accent-deep); }
-  .top-tag { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--text-faint); }
+  .top-tag { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--text-faint); }
 
   .hero {
     background: linear-gradient(180deg, var(--hero-bg) 0%, var(--hero-bg-deep) 100%);
     color: var(--hero-text);
-    padding: 64px 28px 56px;
-    position: relative;
-    overflow: hidden;
+    padding: 48px 24px 40px;
   }
-  .hero .wrap { position: relative; z-index: 1; max-width: 760px; }
   .hero .kicker {
-    font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: 0.03em;
-    color: var(--hero-text-soft); margin: 0 0 18px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px;
+    color: var(--hero-text-soft); margin: 0 0 14px;
   }
   .hero h1 {
     font-family: 'Source Serif 4', serif; font-weight: 500;
-    font-size: clamp(30px, 4.6vw, 42px); line-height: 1.18; margin: 0 0 20px; max-width: 15ch;
+    font-size: clamp(26px, 4vw, 36px); line-height: 1.2; margin: 0 0 16px;
   }
   .hero p.lede {
-    font-size: 17px; color: var(--hero-text-soft); max-width: 52ch; margin: 0 0 34px;
+    font-size: 15.5px; color: var(--hero-text-soft); margin: 0;
   }
 
-  main { padding: 20px 0 60px; }
-  section { padding: 48px 0; border-bottom: 1px solid var(--rule-color); }
+  main { padding: 10px 0 40px; }
+  section { padding: 32px 0; border-bottom: 1px solid var(--rule-color); }
   section:last-of-type { border-bottom: none; }
   .eyebrow {
-    font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--accent-deep);
-    margin: 0 0 10px;
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--accent-deep);
+    margin: 0 0 8px; text-transform: uppercase; letter-spacing: 0.05em;
   }
   h2 {
-    font-family: 'Source Serif 4', serif; font-weight: 500; font-size: 25px;
-    margin: 0 0 18px; color: var(--text);
+    font-family: 'Source Serif 4', serif; font-weight: 500; font-size: 22px;
+    margin: 0 0 12px; color: var(--text);
   }
-  p { color: var(--text-soft); margin: 0 0 14px; max-width: 68ch; }
-  p.lead { color: var(--text); font-size: 17px; }
+  p { color: var(--text-soft); margin: 0 0 12px; }
 
-  .highlights-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px;
+  .lang-switcher {
+    display: flex; gap: 8px; margin-bottom: 24px;
   }
-  .highlight-card {
-    background: var(--bg-panel); border: 1px solid var(--rule-color);
-    padding: 24px; border-radius: 6px;
+  .lang-btn {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; padding: 6px 12px;
+    background: var(--bg-panel); border: 1px solid var(--rule-color); border-radius: 4px;
+    color: var(--text); text-decoration: none; cursor: pointer;
   }
-  .highlight-card h3 {
-    font-family: 'Source Serif 4', serif; font-size: 18px; margin: 0 0 8px; color: var(--text);
-  }
-  .highlight-card p { font-size: 14.5px; margin: 0; }
+  .lang-btn:hover { border-color: var(--accent); }
 
   .cta-box {
     background: var(--hero-bg); color: var(--hero-text);
-    border-radius: 8px; padding: 40px 28px; text-align: center; margin-top: 40px;
+    border-radius: 6px; padding: 28px 20px; text-align: center; margin-top: 30px;
   }
   .cta-box h3 {
-    font-family: 'Source Serif 4', serif; font-size: 24px; margin: 0 0 12px; color: var(--hero-text);
+    font-family: 'Source Serif 4', serif; font-size: 20px; margin: 0 0 8px; color: var(--hero-text);
   }
-  .cta-box p { color: var(--hero-text-soft); margin: 0 auto 24px; max-width: 48ch; }
+  .cta-box p { color: var(--hero-text-soft); font-size: 14px; margin: 0 auto 18px; max-width: 44ch; }
   .btn {
     display: inline-block; background: var(--accent); color: #fff;
-    padding: 12px 28px; border-radius: 4px; font-weight: 500; text-decoration: none;
-    font-size: 15px; transition: background 0.2s;
+    padding: 10px 24px; border-radius: 4px; font-weight: 500; text-decoration: none;
+    font-size: 14px;
   }
   .btn:hover { background: var(--accent-deep); }
 
   footer {
-    padding: 30px 28px 40px; text-align: left; font-size: 13.5px; color: var(--text-faint);
+    padding: 24px; text-align: left; font-size: 13px; color: var(--text-faint);
   }
-  footer .wrap { border-top: 1px solid var(--rule-color); padding-top: 20px; display: flex; justify-content: space-between; }
-
-  @media (max-width: 620px) {
-    .highlights-grid { grid-template-columns: 1fr; }
-  }
+  footer .wrap { border-top: 1px solid var(--rule-color); padding-top: 16px; display: flex; justify-content: space-between; }
 </style>
 </head>
 <body>
 
 <header class="top">
   <div class="wordmark">Geni<span>feld</span></div>
-  <div class="top-tag">Munich · Investor Preview</div>
+  <div class="top-tag">München · Munich</div>
 </header>
 
 <div class="hero">
   <div class="wrap">
-    <p class="kicker">Pharmacogenomics · AI · DiGA-ready</p>
-    <h1>The AI pharmacogenomics platform built for clinical adoption in Germany.</h1>
-    <p class="lede">Genifeld matches a patient's genetic profile to optimal drug selection and dosing — architected from day one for German statutory reimbursement pathways.</p>
+    <div class="lang-switcher">
+      <a href="#de" class="lang-btn">DE Deutsch</a>
+      <a href="#en" class="lang-btn">EN English</a>
+    </div>
+    <p class="kicker">Pharmakogenomik · KI · DiGA-ready</p>
+    <h1>Die KI-Plattform für präzise Medikamentendosierung im klinischen Alltag.</h1>
+    <p class="lede">Genifeld verbindet genetische Profile mit passgenauer Arzneimittelauswahl — konzipiert für deutsche und europäische Regulatorik.</p>
   </div>
 </div>
 
 <main class="wrap">
 
-  <section>
-    <p class="eyebrow">Overview</p>
-    <h2>Transforming genomic data into clinical action</h2>
-    <p class="lead">As sequencing costs collapse, clinics face an overload of complex genetic data. Genifeld provides a secure, cloud-native AI platform that translates raw sequencing outputs into clear, actionable, personalized prescribing insights.</p>
+  <!-- GERMAN SECTION -->
+  <section id="de">
+    <p class="eyebrow">Überblick (DE)</p>
+    <h2>Genomdaten direkt in klinische Handlungen übersetzen</h2>
+    <p>Steigende Sequenzierungskapazitäten überfordern oft den klinischen Alltag. Genifeld bietet eine sichere KI-Plattform, die komplexe Genomdaten in klare, therapieentscheidende Empfehlungen umwandelt.</p>
+    <p><b>Fokus:</b> Pharmakogenomik mit direktem Weg zur DiGA-Erstattung und regulatorischer Konformität im deutschen Gesundheitssystem.</p>
+  </section>
+
+  <!-- ENGLISH SECTION -->
+  <section id="en">
+    <p class="eyebrow">Overview (EN)</p>
+    <h2>Turning genomic complexity into clinical action</h2>
+    <p>As sequencing output surges, clinics face an overload of data. Genifeld provides a secure, cloud-native AI platform that translates raw genomic outputs into clear, actionable, personalized prescribing decisions.</p>
+    <p><b>Focus:</b> Pharmacogenomics optimized for fast-track pathways like Germany's DiGA framework and EU compliance.</p>
   </section>
 
   <section>
-    <p class="eyebrow">Core Advantages</p>
-    <h2>Designed for the European Health Ecosystem</h2>
-    <div class="highlights-grid">
-      <div class="highlight-card">
-        <h3>Built for DiGA</h3>
-        <p>Aligned with Germany's fast-track statutory health insurance reimbursement framework.</p>
-      </div>
-      <div class="highlight-card">
-        <h3>Precision &amp; Compliance</h3>
-        <p>Strict adherence to EU AI Act standards, GDPR, and clinical data protection mandates.</p>
-      </div>
-    </div>
-
     <div class="cta-box">
-      <h3>Request Investor Brief &amp; Full Materials</h3>
-      <p>Detailed financial models, competitive moats, and the complete pitch deck are available to qualified institutional investors and VCs.</p>
-      <a href="mailto:contact@genifeld.com" class="btn">Get in Touch with Founders</a>
+      <h3>Investor Brief &amp; Deck Request</h3>
+      <p>Detailed financial models and pitch materials are available for qualified institutional partners.</p>
+      <a href="mailto:ziba.kiani.h@gmail.com" class="btn">Contact Founders</a>
     </div>
   </section>
 
