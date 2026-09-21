@@ -3,189 +3,207 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Genifeld — KI-Pharmakogenomik & Präzisionsmedizin</title>
-<meta name="description" content="Genifeld matches a patient's genetic profile to drug selection and dosing — architected for German and EU regulatory compliance.">
-<meta name="keywords" content="Genifeld, KI Pharmakogenomik, AI pharmacogenomics, Präzisionsmedizin, DiGA, Genomdaten, München Biotech">
+<title>Genifeld — KI-Plattform für Pharmakogenomik &amp; Präzisionsmedizin in Deutschland</title>
+<meta name="description" content="Genifeld ist die KI-gestützte Pharmakogenomik-Plattform, die von Beginn an für die deutsche und europäische Regulatorik konzipiert ist — mit direktem Weg zur DiGA-Erstattung. München, Deutschland.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Genifeld">
+<link rel="canonical" href="https://genifeld.github.io/investor/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Genifeld">
+<meta property="og:title" content="Genifeld — KI-Plattform für Pharmakogenomik & Präzisionsmedizin">
+<meta property="og:description" content="Die KI-Plattform für präzise Medikamentendosierung im klinischen Alltag — konzipiert für deutsche und europäische Regulatorik, mit direktem Weg zur DiGA-Erstattung.">
+<meta property="og:url" content="https://genifeld.github.io/investor/">
+<meta property="og:image" content="https://genifeld.github.io/investor/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Genifeld — KI-Plattform für Pharmakogenomik & Präzisionsmedizin">
+<meta name="twitter:description" content="Die KI-Plattform für präzise Medikamentendosierung im klinischen Alltag — konzipiert für deutsche und europäische Regulatorik.">
+<meta name="twitter:image" content="https://genifeld.github.io/investor/og-image.png">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Genifeld",
+  "url": "https://genifeld.github.io/investor/",
+  "logo": "https://genifeld.github.io/investor/og-image.png",
+  "description": "KI-gestützte Pharmakogenomik-Plattform für präzise, regulatorisch konforme Medikamentendosierung im deutschen Gesundheitssystem.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "München",
+    "addressCountry": "DE"
+  },
+  "sameAs": []
+}
+</script>
+
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #0F2A3E;
-    --navy-deep: #0A1D2C;
-    --parchment: #F6F3EC;
-    --parchment-dim: #EDE8DC;
-    --teal: #1F7A6C;
-    --teal-deep: #124F45;
-    --ink: #14232C;
-    --ink-soft: #46565F;
-    --ink-faint: #7C8A92;
+    --navy: #0F2A3E; --navy-deep: #0A1D2C;
+    --parchment: #F6F3EC; --parchment-dim: #EDE8DC;
+    --teal: #1F7A6C; --teal-deep: #124F45; --amber: #C98A3E;
+    --ink: #14232C; --ink-soft: #46565F; --ink-faint: #7C8A92;
     --rule: rgba(20, 35, 44, 0.14);
-    --bg: var(--parchment);
-    --bg-panel: var(--parchment-dim);
-    --text: var(--ink);
-    --text-soft: var(--ink-soft);
-    --text-faint: var(--ink-faint);
-    --rule-color: var(--rule);
-    --accent: var(--teal);
-    --accent-deep: var(--teal-deep);
-    --hero-bg: var(--navy);
-    --hero-bg-deep: var(--navy-deep);
-    --hero-text: #F3EFE4;
-    --hero-text-soft: #AFC2C9;
+    --bg: var(--parchment); --text: var(--ink); --text-soft: var(--ink-soft);
+    --text-faint: var(--ink-faint); --rule-color: var(--rule);
+    --accent: var(--teal); --accent-deep: var(--teal-deep);
+    --hero-bg: var(--navy); --hero-bg-deep: var(--navy-deep);
+    --hero-text: #F3EFE4; --hero-text-soft: #AFC2C9;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #10181D;
-      --bg-panel: #162127;
-      --text: #EDE8DC;
-      --text-soft: #B7C2C6;
-      --text-faint: #7E8C91;
+      --bg: #10181D; --text: #EDE8DC; --text-soft: #B7C2C6; --text-faint: #7E8C91;
       --rule-color: rgba(237, 232, 220, 0.14);
-      --accent: #4FBBA4;
-      --accent-deep: #7ED4C0;
-      --hero-bg: #0A1219;
-      --hero-bg-deep: #060B10;
-      --hero-text: #F3EFE4;
-      --hero-text-soft: #93A9AF;
+      --accent: #4FBBA4; --accent-deep: #7ED4C0;
+      --hero-bg: #0A1219; --hero-bg-deep: #060B10;
+      --hero-text: #F3EFE4; --hero-text-soft: #93A9AF;
     }
   }
+  :root[data-theme="dark"] {
+    --bg: #10181D; --text: #EDE8DC; --text-soft: #B7C2C6; --text-faint: #7E8C91;
+    --rule-color: rgba(237, 232, 220, 0.14);
+    --accent: #4FBBA4; --accent-deep: #7ED4C0;
+    --hero-bg: #0A1219; --hero-bg-deep: #060B10;
+    --hero-text: #F3EFE4; --hero-text-soft: #93A9AF;
+  }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
   body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
+    margin: 0; background: var(--bg); color: var(--text);
     font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 16px; line-height: 1.65;
+    padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
     -webkit-font-smoothing: antialiased;
   }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 28px; }
+  a { color: var(--accent-deep); }
 
   header.top {
     display: flex; align-items: baseline; justify-content: space-between;
-    padding: 20px 24px; max-width: 720px; margin: 0 auto;
+    padding: 26px 28px; max-width: 680px; margin: 0 auto;
   }
-  .wordmark { font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 600; }
+  .wordmark { font-family: 'Source Serif 4', serif; font-size: 19px; font-weight: 600; }
   .wordmark span { color: var(--accent-deep); }
-  .top-tag { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--text-faint); }
+  .top-tag { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--text-faint); }
+
+  .lang-toggle { font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
+  .lang-toggle button {
+    background: none; border: none; cursor: pointer; padding: 2px 4px;
+    color: var(--text-faint); font-family: inherit; font-size: inherit;
+  }
+  .lang-toggle button.active { color: var(--accent-deep); font-weight: 600; }
+  .lang-toggle span.sep { color: var(--rule-color); }
 
   .hero {
     background: linear-gradient(180deg, var(--hero-bg) 0%, var(--hero-bg-deep) 100%);
-    color: var(--hero-text);
-    padding: 48px 24px 40px;
+    color: var(--hero-text); padding: 60px 28px 50px; position: relative; overflow: hidden;
   }
-  .hero .kicker {
-    font-family: 'IBM Plex Mono', monospace; font-size: 12px;
-    color: var(--hero-text-soft); margin: 0 0 14px;
-  }
+  .hero .wrap { position: relative; z-index: 1; max-width: 680px; }
+  .hero svg.trace { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.5; }
+  .hero .location { font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--hero-text-soft); margin: 0 0 6px; }
+  .hero .kicker { font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--hero-text-soft); margin: 0 0 18px; }
   .hero h1 {
     font-family: 'Source Serif 4', serif; font-weight: 500;
-    font-size: clamp(26px, 4vw, 36px); line-height: 1.2; margin: 0 0 16px;
+    font-size: clamp(26px, 4.2vw, 36px); line-height: 1.22; margin: 0 0 16px; max-width: 17ch;
   }
-  .hero p.lede {
-    font-size: 15.5px; color: var(--hero-text-soft); margin: 0;
-  }
+  .hero p.lede { font-size: 16.5px; color: var(--hero-text-soft); max-width: 50ch; margin: 0; }
 
-  main { padding: 10px 0 40px; }
-  section { padding: 32px 0; border-bottom: 1px solid var(--rule-color); }
+  main { padding: 8px 0 40px; }
+  section { padding: 40px 0; border-bottom: 1px solid var(--rule-color); }
   section:last-of-type { border-bottom: none; }
-  .eyebrow {
-    font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--accent-deep);
-    margin: 0 0 8px; text-transform: uppercase; letter-spacing: 0.05em;
-  }
-  h2 {
-    font-family: 'Source Serif 4', serif; font-weight: 500; font-size: 22px;
-    margin: 0 0 12px; color: var(--text);
-  }
-  p { color: var(--text-soft); margin: 0 0 12px; }
+  .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--accent-deep); margin: 0 0 10px; }
+  h2 { font-family: 'Source Serif 4', serif; font-weight: 500; font-size: 24px; margin: 0 0 16px; color: var(--text); }
+  p { color: var(--text-soft); margin: 0 0 14px; max-width: 62ch; }
+  p.focus { color: var(--text); font-size: 15.5px; }
 
-  .lang-switcher {
-    display: flex; gap: 8px; margin-bottom: 24px;
+  .brief-box {
+    background: var(--parchment-dim); border: 1px solid var(--rule-color); border-radius: 4px;
+    padding: 24px; margin-top: 10px;
   }
-  .lang-btn {
-    font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; padding: 6px 12px;
-    background: var(--bg-panel); border: 1px solid var(--rule-color); border-radius: 4px;
-    color: var(--text); text-decoration: none; cursor: pointer;
+  :root[data-theme="dark"] .brief-box,
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .brief-box { background: rgba(255,255,255,0.03); } }
+  .brief-box p { margin: 0 0 16px; }
+  .brief-box a.btn {
+    display: inline-block; background: var(--accent); color: #fff; text-decoration: none;
+    padding: 11px 20px; border-radius: 3px; font-size: 14.5px; font-weight: 500;
   }
-  .lang-btn:hover { border-color: var(--accent); }
 
-  .cta-box {
-    background: var(--hero-bg); color: var(--hero-text);
-    border-radius: 6px; padding: 28px 20px; text-align: center; margin-top: 30px;
-  }
-  .cta-box h3 {
-    font-family: 'Source Serif 4', serif; font-size: 20px; margin: 0 0 8px; color: var(--hero-text);
-  }
-  .cta-box p { color: var(--hero-text-soft); font-size: 14px; margin: 0 auto 18px; max-width: 44ch; }
-  .btn {
-    display: inline-block; background: var(--accent); color: #fff;
-    padding: 10px 24px; border-radius: 4px; font-weight: 500; text-decoration: none;
-    font-size: 14px;
-  }
-  .btn:hover { background: var(--accent-deep); }
+  [data-lang-content] { display: none; }
+  [data-lang-content].active { display: block; }
 
-  .contact-details {
-    margin-top: 16px; font-size: 14px; color: var(--text-soft); text-align: center;
-  }
-  .contact-details a { color: var(--accent); text-decoration: none; }
-  .contact-details a:hover { text-decoration: underline; }
-
-  footer {
-    padding: 24px; text-align: left; font-size: 13px; color: var(--text-faint);
-  }
-  footer .wrap { border-top: 1px solid var(--rule-color); padding-top: 16px; display: flex; justify-content: space-between; }
+  footer { padding: 34px 28px 44px; }
+  footer .wrap { border-top: 1px solid var(--rule-color); padding-top: 24px; }
+  footer .f-name { font-family: 'Source Serif 4', serif; font-size: 15px; }
+  footer .f-meta { font-size: 13px; color: var(--text-faint); margin-top: 6px; }
 </style>
 </head>
 <body>
 
 <header class="top">
   <div class="wordmark">Geni<span>feld</span></div>
-  <div class="top-tag">München · Munich</div>
+  <div class="lang-toggle">
+    <button data-set-lang="de" class="active">DE Deutsch</button>
+    <span class="sep">·</span>
+    <button data-set-lang="en">EN English</button>
+  </div>
 </header>
 
 <div class="hero">
+  <svg class="trace" viewBox="0 0 680 200" preserveAspectRatio="none" aria-hidden="true">
+    <polyline points="0,60 60,60 90,20 120,100 150,60 680,60" fill="none" stroke="#4FBBA4" stroke-width="1" opacity="0.35"/>
+    <polyline points="0,140 200,140 230,180 260,110 290,140 680,140" fill="none" stroke="#C98A3E" stroke-width="1" opacity="0.3"/>
+  </svg>
   <div class="wrap">
-    <div class="lang-switcher">
-      <a href="#de" class="lang-btn">DE Deutsch</a>
-      <a href="#en" class="lang-btn">EN English</a>
-    </div>
+    <p class="location">München · Munich</p>
     <p class="kicker">Pharmakogenomik · KI · DiGA-ready</p>
-    <h1>Die KI-Plattform für präzise Medikamentendosierung im klinischen Alltag.</h1>
-    <p class="lede">Genifeld verbindet genetische Profile mit passgenauer Arzneimittelauswahl — konzipiert für deutsche und europäische Regulatorik.</p>
+    <h1 data-lang-content="de" class="active">Die KI-Plattform für präzise Medikamentendosierung im klinischen Alltag.</h1>
+    <h1 data-lang-content="en">The AI platform for precise medication dosing in everyday clinical practice.</h1>
+    <p class="lede active" data-lang-content="de">Genifeld verbindet genetische Profile mit passgenauer Arzneimittelauswahl — konzipiert für deutsche und europäische Regulatorik.</p>
+    <p class="lede" data-lang-content="en">Genifeld connects genetic profiles with precise drug selection — designed from day one for German and EU regulatory compliance.</p>
   </div>
 </div>
 
 <main class="wrap">
 
-  <!-- GERMAN SECTION -->
-  <section id="de">
-    <p class="eyebrow">Überblick (DE)</p>
-    <h2>Genomdaten direkt in klinische Handlungen übersetzen</h2>
-    <p>Steigende Sequenzierungskapazitäten überfordern oft den klinischen Alltag. Genifeld bietet eine sichere KI-Plattform, die komplexe Genomdaten in klare, therapieentscheidende Empfehlungen umwandelt.</p>
-    <p><b>Fokus:</b> Pharmakogenomik mit direktem Weg zur DiGA-Erstattung und regulatorischer Konformität im deutschen Gesundheitssystem.</p>
+  <section id="overview">
+    <p class="eyebrow active" data-lang-content="de">Überblick</p>
+    <p class="eyebrow" data-lang-content="en">Overview</p>
+
+    <div data-lang-content="de" class="active">
+      <h2>Genomdaten direkt in klinische Handlungen übersetzen</h2>
+      <p>Steigende Sequenzierungskapazitäten überfordern oft den klinischen Alltag. Genifeld bietet eine sichere KI-Plattform, die komplexe Genomdaten in klare, therapieentscheidende Empfehlungen umwandelt.</p>
+      <p class="focus">Fokus: Pharmakogenomik mit direktem Weg zur DiGA-Erstattung und regulatorischer Konformität im deutschen Gesundheitssystem.</p>
+    </div>
+    <div data-lang-content="en">
+      <h2>Turning genomic complexity into clinical action</h2>
+      <p>As sequencing output surges, clinics face an overload of data. Genifeld provides a secure, cloud-native AI platform that translates raw genomic outputs into clear, actionable, personalized prescribing decisions.</p>
+      <p class="focus">Focus: Pharmacogenomics optimized for fast-track pathways like Germany's DiGA framework and EU compliance.</p>
+    </div>
   </section>
 
-  <!-- ENGLISH SECTION -->
-  <section id="en">
-    <p class="eyebrow">Overview (EN)</p>
-    <h2>Turning genomic complexity into clinical action</h2>
-    <p>As sequencing output surges, clinics face an overload of data. Genifeld provides a secure, cloud-native AI platform that translates raw genomic outputs into clear, actionable, personalized prescribing decisions.</p>
-    <p><b>Focus:</b> Pharmacogenomics optimized for fast-track pathways like Germany's DiGA framework and EU compliance.</p>
-  </section>
+  <section id="contact">
+    <p class="eyebrow active" data-lang-content="de">Investor Brief &amp; Deck</p>
+    <p class="eyebrow" data-lang-content="en">Investor Brief &amp; Deck</p>
 
-  <section>
-    <div class="cta-box">
-      <h3>Investor Brief &amp; Deck Request</h3>
-      <p>Detailed financial models and pitch materials are available for qualified institutional partners.</p>
-      <a href="mailto:ziba.kiani.h@gmail.com" class="btn">Contact Founders</a>
-      <div class="contact-details">
-        <p style="margin: 8px 0 0 0; color: inherit;">
-          Phone: <a href="tel:0049-17660034923">004917660034923</a> </a>
-        </p>
-      </div>
+    <div class="brief-box">
+      <p data-lang-content="de" class="active">Detaillierte Finanzmodelle und Pitch-Unterlagen stehen qualifizierten institutionellen Partnern auf Anfrage zur Verfügung.</p>
+      <p data-lang-content="en">Detailed financial models and pitch materials are available for qualified institutional partners upon request.</p>
+      <a class="btn" href="mailto:ziba.kiani.h@gmail.com">
+        <span data-lang-content="de" class="active">Gründerin kontaktieren</span>
+        <span data-lang-content="en">Contact Founder</span>
+      </a>
     </div>
   </section>
 
@@ -193,10 +211,25 @@
 
 <footer>
   <div class="wrap">
-    <div>Genifeld · Munich, Germany</div>
-    <div>Confidential Preview</div>
+    <div class="f-name">Genifeld</div>
+    <div class="f-meta">München, Deutschland</div>
   </div>
 </footer>
+
+<script>
+  document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var lang = btn.getAttribute('data-set-lang');
+      document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+        b.classList.toggle('active', b === btn);
+      });
+      document.querySelectorAll('[data-lang-content]').forEach(function (el) {
+        el.classList.toggle('active', el.getAttribute('data-lang-content') === lang);
+      });
+      document.documentElement.setAttribute('lang', lang);
+    });
+  });
+</script>
 
 </body>
 </html>
